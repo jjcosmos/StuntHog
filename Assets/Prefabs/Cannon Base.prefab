@@ -95,7 +95,8 @@ MonoBehaviour:
   MouseSensitivity: 100
   Cannon_Barrel: {fileID: 2595132539347415079}
   invertY: 0
-  cannonball: {fileID: 0}
+  cannonball: {fileID: 3485397524924124439, guid: 503ca76144de89241bfe6c848241b92e,
+    type: 3}
   firePoint: {fileID: 4537177219820441588}
   force: 20000
   PS_Smoke: {fileID: 0}

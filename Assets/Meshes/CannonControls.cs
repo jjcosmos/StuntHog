@@ -9,7 +9,7 @@ public class CannonControls : MonoBehaviour
     public float MouseSensitivity = 1;
     [SerializeField] Transform Cannon_Barrel;
     [SerializeField] bool invertY = false;
-    [SerializeField] Rigidbody cannonball;
+    public Rigidbody cannonball;
     [SerializeField] Transform firePoint;
     [SerializeField] float force;
 
