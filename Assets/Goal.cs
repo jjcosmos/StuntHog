@@ -7,10 +7,13 @@ public class Goal : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] int levelToLoad;
+    ParticleSystem particles;
+    AudioSource audioSource;
     bool isLoading;
     void Start()
     {
-        
+        particles = GetComponent<ParticleSystem>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -23,6 +26,8 @@ public class Goal : MonoBehaviour
     {
         if (other.CompareTag("Player") && !isLoading)
         {
+            particles.Play();
+            audioSource.Play();
             StartCoroutine(LoadNextLevel());
             isLoading = true;
         }
@@ -31,6 +36,6 @@ public class Goal : MonoBehaviour
     IEnumerator LoadNextLevel()
     {
         yield return new WaitForSecondsRealtime(3f);
-        SceneManager.LoadScene(levelToLoad);
+        SceneManager.LoadScene(levelToLoad + 1);
     }
 }

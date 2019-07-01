@@ -26,9 +26,11 @@ public class CannonControls : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         
         canFire = true;
         CSCam.gameObject.SetActive(false);
+        audioSource = GetComponent<AudioSource>();
         
     }
 
@@ -58,10 +60,10 @@ public class CannonControls : MonoBehaviour
             CSCam.m_Follow = ball.transform;
             Camera.main.gameObject.SetActive(false);
             CSCam.gameObject.SetActive(true);
-            
-            
+
+
             //StartCoroutine(Timer());
-            //audioSource.PlayOneShot(audioSource.clip);
+            audioSource.Play();
 
         }
         
